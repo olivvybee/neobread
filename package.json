@@ -4,10 +4,13 @@
   "description": "A set of bread emojis based on Neofox and Neocat.",
   "scripts": {
     "generate-pngs": "tsx ./scripts/generatePNGs.ts",
-    "generate-meta": "tsx ./scripts/generateMeta.ts"
+    "generate-meta": "tsx ./scripts/generateMeta.ts",
+    "create-archive": "tsx ./scripts/createArchive.ts"
   },
   "license": "MIT",
   "dependencies": {
+    "@types/archiver": "^6.0.2",
+    "archiver": "^7.0.1",
     "svg2img": "^1.0.0-beta.2",
     "tsx": "^4.7.1",
     "typescript": "^5.4.2"
