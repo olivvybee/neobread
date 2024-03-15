@@ -21,6 +21,8 @@ jobs:
         run: npm run generate-pngs
       - name: Generate meta
         run: npm run generate-meta
+      - name: Generate preview
+        run: npm run generate-preview
       - name: Create archive
         run: npm run create-archive
       - name: Create changelog
@@ -34,5 +36,6 @@ jobs:
         with:
           body: ${{ steps.changelog.outputs.changelog }}
           files: |
+            preview.png
             neobread.zip
             neobread-svg.zip

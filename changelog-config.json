@@ -1,5 +1,5 @@
 {
   "pr_template": "- #{{TITLE}}",
-  "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Changes in this release</summary>\n\n#{{UNCATEGORIZED}}\n</details>",
+  "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Changes in this release</summary>\n\n#{{UNCATEGORIZED}}\n</details>\n\n![A grid of bread emojis making various expressions](https://github.com/olivvybee/neobread/releases/download/#{{TO_TAG}}/preview.png",
   "categories": []
 }
