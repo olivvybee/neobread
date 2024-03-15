@@ -1,0 +1,13 @@
+{
+  "name": "neobread",
+  "version": "1.0.0",
+  "description": "A set of bread emojis based on Neofox and Neocat.",
+  "scripts": {
+    "generate-pngs": "tsx ./scripts/generatePNGs.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2"
+  }
+}
