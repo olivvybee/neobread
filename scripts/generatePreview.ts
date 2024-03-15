@@ -27,20 +27,22 @@ const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#cfb0eb';
 ctx.fillRect(0, 0, width, height);
 
-filenames.forEach((filename, index) => {
-  const filePath = path.resolve(pngDirectory, filename);
+filenames
+  .filter((filename) => filename.endsWith('.png'))
+  .forEach((filename, index) => {
+    const filePath = path.resolve(pngDirectory, filename);
 
-  const x = (index % MAX_COLUMNS) * SPACE_PER_EMOJI + SPACING / 2;
-  const y = Math.floor(index / MAX_COLUMNS) * SPACE_PER_EMOJI + SPACING / 2;
+    const x = (index % MAX_COLUMNS) * SPACE_PER_EMOJI + SPACING / 2;
+    const y = Math.floor(index / MAX_COLUMNS) * SPACE_PER_EMOJI + SPACING / 2;
 
-  const fileData = fs.readFileSync(filePath);
-  const image = new Image();
-  image.onload = () => {
-    ctx.drawImage(image, x, y);
-  };
-  image.src = fileData;
-  image.width = EMOJI_SIZE;
-});
+    const fileData = fs.readFileSync(filePath);
+    const image = new Image();
+    image.onload = () => {
+      ctx.drawImage(image, x, y);
+    };
+    image.src = fileData;
+    image.width = EMOJI_SIZE;
+  });
 
 const output = canvas.toBuffer();
 const outPath = path.resolve('.', 'preview.png');
