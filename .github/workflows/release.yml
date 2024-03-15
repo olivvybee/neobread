@@ -1,0 +1,29 @@
+name: Create Release
+on: [push]
+
+jobs:
+  generate-pngs:
+    runs-on: ubuntu-latest
+
+    if:
+      ${{ github.actor != 'github-actions[bot]' && github.event_name != 'push'
+      || github.event.pusher.name != 'github-actions[bot]' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - name: Generate PNGs
+        run: npm run generate-pngs
+      - name: Generate meta
+        run: npm run generate-meta
+      - name: Commit PNGs
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Generate latest PNGs'
+          default_author: github_actions
