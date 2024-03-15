@@ -35,9 +35,11 @@ filenames.forEach((filename, index) => {
 
   const fileData = fs.readFileSync(filePath);
   const image = new Image();
+  image.onload = () => {
+    ctx.drawImage(image, x, y);
+  };
   image.src = fileData;
   image.width = EMOJI_SIZE;
-  ctx.drawImage(image, x, y);
 });
 
 const output = canvas.toBuffer();
