@@ -23,9 +23,15 @@ jobs:
         run: npm run generate-meta
       - name: Create archive
         run: npm run create-archive
+      - name: Create changelog
+        id: changelog
+        uses: mikepenz/release-changelog-builder-action@v4
+        with:
+          commitMode: true
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
+          body: ${{ steps.changelog.outputs.changelog }}
           files: |
             neobread.zip
             neobread-svg.zip
