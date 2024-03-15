@@ -13,7 +13,9 @@ if (!fs.existsSync(pngDirectory)) {
   throw new Error('png directory does not exist');
 }
 
-const filenames = fs.readdirSync(pngDirectory);
+const filenames = fs
+  .readdirSync(pngDirectory)
+  .filter((filename) => filename.endsWith('.png'));
 
 const rows = Math.ceil(filenames.length / MAX_COLUMNS);
 const columns = rows === 1 ? filenames.length : MAX_COLUMNS;
@@ -27,22 +29,20 @@ const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#cfb0eb';
 ctx.fillRect(0, 0, width, height);
 
-filenames
-  .filter((filename) => filename.endsWith('.png'))
-  .forEach((filename, index) => {
-    const filePath = path.resolve(pngDirectory, filename);
+filenames.forEach((filename, index) => {
+  const filePath = path.resolve(pngDirectory, filename);
 
-    const x = (index % MAX_COLUMNS) * SPACE_PER_EMOJI + SPACING / 2;
-    const y = Math.floor(index / MAX_COLUMNS) * SPACE_PER_EMOJI + SPACING / 2;
+  const x = (index % MAX_COLUMNS) * SPACE_PER_EMOJI + SPACING / 2;
+  const y = Math.floor(index / MAX_COLUMNS) * SPACE_PER_EMOJI + SPACING / 2;
 
-    const fileData = fs.readFileSync(filePath);
-    const image = new Image();
-    image.onload = () => {
-      ctx.drawImage(image, x, y);
-    };
-    image.src = fileData;
-    image.width = EMOJI_SIZE;
-  });
+  const fileData = fs.readFileSync(filePath);
+  const image = new Image();
+  image.onload = () => {
+    ctx.drawImage(image, x, y);
+  };
+  image.src = fileData;
+  image.width = EMOJI_SIZE;
+});
 
 const output = canvas.toBuffer();
 const outPath = path.resolve('.', 'preview.png');
