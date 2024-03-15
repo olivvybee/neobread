@@ -27,6 +27,7 @@ jobs:
         id: changelog
         uses: mikepenz/release-changelog-builder-action@v4
         with:
+          configuration: 'changelog-config.json'
           commitMode: true
       - name: Create release
         uses: softprops/action-gh-release@v2

@@ -1,0 +1,5 @@
+{
+  "pr_template": "- #{{TITLE}}",
+  "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Changes in this release</summary>\n\n#{{UNCATEGORIZED}}\n</details>",
+  "categories": []
+}
