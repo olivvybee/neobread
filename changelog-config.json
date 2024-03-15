@@ -1,5 +1,5 @@
 {
   "pr_template": "- #{{TITLE}}",
-  "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Changes in this release</summary>\n\n#{{UNCATEGORIZED}}\n</details>\n\n![A grid of bread emojis making various expressions](https://github.com/olivvybee/neobread/releases/download/#{{TO_TAG}}/preview.png)",
+  "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Changes in this release</summary>\n\n#{{UNCATEGORIZED}}\n</details>\n\n![A grid of bread emojis making various expressions](https://github.com/olivvybee/neobread/releases/download/#{{TO_TAG}}/preview.png)\n\nIn most cases you probably want to download [neobread.zip](https://github.com/olivvybee/neobread/releases/download/#{{TO_TAG}}/neobread.zip), which contains 256x256px PNGs and a *key-compatible `meta.json`, but there are also SVG versions available in [neobread-svg.zip](https://github.com/olivvybee/neobread/releases/download/#{{TO_TAG}}/neobread-svg.zip).",
   "categories": []
 }
