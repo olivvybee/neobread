@@ -26,4 +26,6 @@ jobs:
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          files: neobread.zip
+          files: |
+            neobread.zip
+            neobread-svg.zip

@@ -3,18 +3,26 @@ import fs from 'fs';
 
 import archiver from 'archiver';
 
-const pngPath = path.resolve('.', 'png');
-const destinationPath = path.resolve('.', 'neobread.zip');
+const createZipFromDirectory = (inPath: string, outPath: string) => {
+  const output = fs.createWriteStream(outPath);
+  const archive = archiver('zip');
 
-const output = fs.createWriteStream(destinationPath);
-const archive = archiver('zip');
+  output.on('error', (err) => {
+    throw err;
+  });
 
-output.on('error', (err) => {
-  throw err;
-});
+  archive.pipe(output);
 
-archive.pipe(output);
+  archive.directory(inPath, false);
 
-archive.directory(pngPath, false);
+  archive.finalize();
+};
 
-archive.finalize();
+createZipFromDirectory(
+  path.resolve('.', 'png'),
+  path.resolve('.', 'neobread.zip')
+);
+createZipFromDirectory(
+  path.resolve('.', 'svg'),
+  path.resolve('.', 'neobread-svg.zip')
+);
