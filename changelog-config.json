@@ -1,5 +1,5 @@
 {
   "pr_template": "- #{{TITLE}}",
-  "template": "#{{CHANGELOG}}\n\n## Changes in this release\n\n#{{UNCATEGORIZED}}\n</details>\n\n![A grid of bread emojis making various expressions](https://github.com/olivvybee/neobread/releases/download/#{{TO_TAG}}/preview.png)\n\n*See the [README](https://github.com/olivvybee/neobread/) for usage instructions.*.",
+  "template": "#{{CHANGELOG}}\n\n## Changes in this release\n\n#{{UNCATEGORIZED}}\n\n![A grid of bread emojis making various expressions](https://github.com/olivvybee/neobread/releases/download/#{{TO_TAG}}/preview.png)\n\n*See the [README](https://github.com/olivvybee/neobread/) for usage instructions.*",
   "categories": []
 }
