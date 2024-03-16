@@ -26,18 +26,19 @@ Using
 [Mastodon's `tootctl` CLI](https://docs.joinmastodon.org/admin/tootctl/#emoji-import)
 lets you import the entire set at once from the command line.
 
-If you trust random shell commands from the internet:
+If you trust random shell commands from the internet, run this from your
+instance's `live` directory:
 
 ```
 wget https://github.com/olivvybee/neobread/releases/latest/download/neobread.tar.gz
-tootctl emoji import --category neobread ./neobread.tar.gz
+RAILS_ENV=production bin/tootctl emoji import --category neobread ./neobread.tar.gz
 ```
 
 Otherwise:
 
 1. Download the
    [latest `neobread.tar.gz` archive](https://github.com/olivvybee/neobread/releases/latest).
-2. Run `tootctl import` on the archive you downloaded.
+2. Run `tootctl emoji import` on the archive you downloaded.
 
 ### Misskey and its many forks (firefish, iceshrimp, sharkey, etc)
 
