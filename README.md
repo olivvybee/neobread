@@ -29,7 +29,7 @@ lets you import the entire set at once from the command line.
 If you trust random shell commands from the internet:
 
 ```
-curl -O https://github.com/olivvybee/neobread/releases/latest/download/neobread.tar.gz
+wget https://github.com/olivvybee/neobread/releases/latest/download/neobread.tar.gz
 tootctl emoji import --category neobread ./neobread.tar.gz
 ```
 
