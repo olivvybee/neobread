@@ -20,7 +20,7 @@ jobs:
       - name: Generate PNGs
         run: npm run generate-pngs
       - name: Create tar archive
-        run: tar -czvf neobread.tar.gz png
+        run: tar -czvf neobread.tar.gz -C png .
       - name: Generate meta
         run: npm run generate-meta
       - name: Generate preview
