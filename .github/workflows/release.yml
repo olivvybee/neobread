@@ -11,30 +11,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: Install dependencies
         run: npm install
+
       - name: Generate PNGs
         run: npm run generate-pngs
+
       - name: Create tar archive
         run: tar -czvf neobread.tar.gz -C png .
+
       - name: Generate meta
         run: npm run generate-meta
+
       - name: Generate preview
         run: npm run generate-preview
+
       - name: Create PNG archive
         run: zip -r neobread.zip png
+
       - name: Create SVG archive
         run: zip -r neobread-svg.zip svg
+
       - name: Create changelog
         id: changelog
         uses: mikepenz/release-changelog-builder-action@v4
         with:
           configuration: 'changelog-config.json'
           commitMode: true
+
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
