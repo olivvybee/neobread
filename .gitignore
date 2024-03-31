@@ -2,3 +2,5 @@
 *.afdesign~lock~
 node_modules
 png
+manifest.json
+filemap.json

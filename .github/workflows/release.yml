@@ -35,6 +35,15 @@ jobs:
       - name: Create PNG archive
         run: zip -r neobread.zip png
 
+      - name: Generate checksum
+        id: checksum
+        run:
+          echo "checksum=$(sha256sum neobread.zip | cut -d " " -f 1)" >>
+          $GITHUB_OUTPUT
+
+      - name: Generate manifest
+        run: npm run generate-manifest ${{ steps.checksum.outputs.checksum }}
+
       - name: Create SVG archive
         run: zip -r neobread-svg.zip svg
 
@@ -54,3 +63,5 @@ jobs:
             neobread.zip
             neobread.tar.gz
             neobread-svg.zip
+            manifest.json
+            filemap.json

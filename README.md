@@ -51,3 +51,11 @@ the entire archive at once.
 
 The emojis will be categorised into `neobread`, `neofox`, and `neocat`
 categories automatically.
+
+### Pleroma and akkoma
+
+Run the following command:
+
+```
+mix pleroma.emoji get-packs neobread -m https://github.com/olivvybee/neobread/releases/latest/download/manifest.json
+```

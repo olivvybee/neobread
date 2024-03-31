@@ -4,6 +4,7 @@
   "description": "A set of bread emojis based on Neofox and Neocat.",
   "scripts": {
     "generate-pngs": "tsx ./scripts/generatePNGs.ts",
+    "generate-manifest": "tsx ./scripts/generateManifest.ts",
     "generate-meta": "tsx ./scripts/generateMeta.ts",
     "generate-preview": "tsx ./scripts/generatePreview.ts"
   },
