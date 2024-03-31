@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { createCanvas, Image } from 'canvas';
 
-const MAX_COLUMNS = 8;
+const MAX_COLUMNS = 10;
 const EMOJI_SIZE = 256;
 const SPACE_PER_EMOJI = 300;
 const SPACING = SPACE_PER_EMOJI - EMOJI_SIZE;
