@@ -22,7 +22,9 @@ interface RunArgs {
 
 const run = async ({ newOnly = false }: RunArgs) => {
   const svgDirectory = path.resolve('.', 'svg');
-  const svgs = fs.readdirSync(svgDirectory);
+  const svgs = fs
+    .readdirSync(svgDirectory)
+    .filter((filename) => filename.endsWith('.svg'));
 
   const pngDirectory = path.resolve('.', 'png');
 
