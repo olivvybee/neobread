@@ -1,39 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-    <g transform="matrix(1,0,0,1,-300,0)">
-        <g id="neobread_eyes" transform="matrix(1,0,0,1,300,0)">
-            <rect x="0" y="0" width="256" height="256" style="fill:none;"/>
-            <g id="Crust" transform="matrix(3.74712,0,0,3.74712,-157.7,-109.634)">
-                <path d="M93.521,36.433C101.583,36.433 108.129,42.979 108.129,51.041C108.129,54.469 106.946,57.622 104.967,60.115L104.967,82.756C104.967,86.976 101.541,90.402 97.321,90.402L55.101,90.402C50.881,90.402 47.455,86.976 47.455,82.756L47.455,60.028C45.517,57.549 44.361,54.429 44.361,51.041C44.361,42.979 50.907,36.433 58.969,36.433L93.521,36.433Z" style="fill:rgb(209,160,132);stroke:black;stroke-width:4px;"/>
+    <rect id="neobread_eyes" x="0" y="0" width="256" height="256" style="fill:none;"/>
+    <path id="Crust" d="M192.734,26.885C222.946,26.885 247.473,51.413 247.473,81.624C247.473,94.467 243.041,106.282 235.623,115.623L235.623,200.464C235.623,216.277 222.785,229.115 206.972,229.115L48.771,229.115C32.958,229.115 20.12,216.277 20.12,200.464L20.12,115.297C12.857,106.008 8.527,94.318 8.527,81.624C8.527,51.413 33.054,26.885 63.266,26.885L192.734,26.885Z" style="fill:rgb(209,160,132);stroke:black;stroke-width:15px;"/>
+    <rect id="Shadow" x="122.332" y="112.959" width="105.66" height="15.248" style="fill:rgb(186,133,109);"/>
+    <path id="Slice" d="M42.009,112.691C33.24,105.704 27.616,94.934 27.616,82.861C27.616,61.82 44.698,44.738 65.738,44.738L135.611,44.738C156.652,44.738 173.734,61.82 173.734,82.861C173.734,94.528 168.481,104.979 160.213,111.974L160.213,196.732C160.213,204.964 153.53,211.647 145.299,211.647L56.924,211.647C48.692,211.647 42.009,204.964 42.009,196.732L42.009,112.691Z" style="fill:rgb(252,233,186);"/>
+    <g id="Face">
+        <g id="Eyes">
+            <g id="Right-eye" serif:id="Right eye">
+                <ellipse cx="130.41" cy="116.691" rx="27.618" ry="45.357" style="fill:white;"/>
+                <circle cx="120.988" cy="116.691" r="14.595"/>
             </g>
-            <g id="Shadow" transform="matrix(4.03114,0,0,5.19154,-192.805,-201.948)">
-                <rect x="78.176" y="60.658" width="26.211" height="2.937" style="fill:rgb(186,133,109);"/>
-            </g>
-            <g id="Slice" transform="matrix(1.01387,0,0,0.990808,-3.29993,-0.001601)">
-                <path d="M44.69,113.738C36.04,106.686 30.493,95.816 30.493,83.631C30.493,62.395 47.341,45.155 68.094,45.155L137.011,45.155C157.764,45.155 174.612,62.395 174.612,83.631C174.612,95.407 169.431,105.954 161.277,113.014L161.277,198.559C161.277,206.867 154.685,213.612 146.566,213.612L59.4,213.612C51.281,213.612 44.69,206.867 44.69,198.559L44.69,113.738Z" style="fill:rgb(252,233,186);"/>
-            </g>
-            <g id="Eyes" transform="matrix(1,0,0,1,0.899385,6.09315)">
-                <g id="Face">
-                    <g id="Eyes1" serif:id="Eyes">
-                        <g id="Right-eye" serif:id="Right eye" transform="matrix(1.11486,0,0,1.11486,-16.2545,-7.85781)">
-                            <g transform="matrix(1.18506,0,0,1.18506,-320.125,-18.3569)">
-                                <ellipse cx="378.145" cy="104.013" rx="18.751" ry="30.795" style="fill:white;stroke:black;stroke-width:2.27px;"/>
-                            </g>
-                            <g transform="matrix(1,0,0,1,-249.01,0)">
-                                <circle cx="369.429" cy="104.905" r="11.743"/>
-                            </g>
-                        </g>
-                        <g id="Left-eye" serif:id="Left eye" transform="matrix(1.1158,0,0,1.1158,-2.45841,-7.92187)">
-                            <g transform="matrix(1.18506,0,0,1.18506,-380.386,-18.3569)">
-                                <ellipse cx="378.145" cy="104.013" rx="18.751" ry="30.795" style="fill:white;stroke:black;stroke-width:2.27px;"/>
-                            </g>
-                            <g transform="matrix(1,0,0,1,-309.204,0)">
-                                <circle cx="369.429" cy="104.905" r="11.743"/>
-                            </g>
-                        </g>
-                    </g>
-                </g>
+            <g id="Left-eye" serif:id="Left eye">
+                <ellipse cx="70.963" cy="116.729" rx="27.641" ry="45.395" style="fill:white;"/>
+                <circle cx="61.617" cy="116.729" r="14.608"/>
             </g>
         </g>
     </g>
