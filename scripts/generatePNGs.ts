@@ -18,22 +18,29 @@ const svg2img = (svg: string, options?: svg2imgOptions): Promise<any> =>
 
 interface RunArgs {
   newOnly?: boolean;
+  size: number;
+  outdir: string;
 }
 
-const run = async ({ newOnly = false }: RunArgs) => {
+const DEFAULT_SIZE = 256;
+const DEFAULT_DIR = path.resolve('.', 'png');
+
+const run = async ({
+  newOnly = false,
+  size = DEFAULT_SIZE,
+  outdir = DEFAULT_DIR,
+}: RunArgs) => {
   const svgDirectory = path.resolve('.', 'svg');
   const svgs = fs
     .readdirSync(svgDirectory)
     .filter((filename) => filename.endsWith('.svg'));
 
-  const pngDirectory = path.resolve('.', 'png');
-
-  if (!fs.existsSync(pngDirectory)) {
-    fs.mkdirSync(pngDirectory);
+  if (!fs.existsSync(outdir)) {
+    fs.mkdirSync(outdir);
   }
 
   const existingPngs = fs
-    .readdirSync(pngDirectory)
+    .readdirSync(outdir)
     .filter((filename) => filename.endsWith('.png'));
 
   const svgsToProcess = newOnly
@@ -54,13 +61,13 @@ const run = async ({ newOnly = false }: RunArgs) => {
     const svgFilename = svgsToProcess[i];
     const svgPath = path.resolve(svgDirectory, svgFilename);
     const pngFilename = svgFilename.replace('svg', 'png');
-    const pngPath = path.resolve(pngDirectory, pngFilename);
+    const pngPath = path.resolve(outdir, pngFilename);
 
     const buffer = await svg2img(svgPath, {
       resvg: {
         fitTo: {
           mode: 'width',
-          value: 256,
+          value: size,
         },
       },
     });
@@ -80,6 +87,18 @@ const argv = yargs(process.argv)
     type: 'boolean',
     description:
       "Only generate PNGs for SVGs that don't already have a PNG version",
+  })
+  .option('size', {
+    alias: 's',
+    type: 'number',
+    description: 'The size to generate PNGs at, in pixels',
+    default: DEFAULT_SIZE,
+  })
+  .option('outdir', {
+    alias: 'o',
+    type: 'string',
+    description: 'Output directory to save PNGs into',
+    default: DEFAULT_DIR,
   })
   .parseSync();
 

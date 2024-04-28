@@ -23,6 +23,9 @@ jobs:
       - name: Generate PNGs
         run: npm run generate-pngs
 
+      - name: Generate hi-res PNGs
+        run: npm run generate-pngs -- --size 2048 --outdir ./png-2048
+
       - name: Create tar archive
         run: tar -czvf neobread.tar.gz -C png .
 
@@ -34,6 +37,9 @@ jobs:
 
       - name: Create PNG archive
         run: zip -r neobread.zip png
+
+      - name: Create hi-res PNG archive
+        run: zip -r neobread-hires.zip png-2048
 
       - name: Generate checksum
         id: checksum
@@ -63,6 +69,7 @@ jobs:
           files: |
             preview.png
             neobread.zip
+            neobread-hires.zip
             neobread.tar.gz
             neobread-svg.zip
             manifest.json
@@ -79,6 +86,7 @@ jobs:
           files: |
             preview.png
             neobread.zip
+            neobread-hires.zip
             neobread.tar.gz
             neobread-svg.zip
             manifest.json
