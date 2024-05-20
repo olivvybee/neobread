@@ -36,10 +36,10 @@ jobs:
         run: npm run generate-preview
 
       - name: Create PNG archive
-        run: zip -r neobread.zip png
+        run: zip -rj neobread.zip png/*
 
       - name: Create hi-res PNG archive
-        run: zip -r neobread-hires.zip png-2048
+        run: zip -rj neobread-hires.zip png-2048/*
 
       - name: Generate checksum
         id: checksum
@@ -51,7 +51,7 @@ jobs:
         run: npm run generate-manifest ${{ steps.checksum.outputs.checksum }}
 
       - name: Create SVG archive
-        run: zip -r neobread-svg.zip svg
+        run: zip -rj neobread-svg.zip svg
 
       - name: Create changelog
         id: changelog
